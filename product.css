@@ -9,7 +9,56 @@ body {
   background: #f4f8f2;
   color: #333;
 }
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
+.logo img {
+    width: 40px;
+}
+
+.logo h2 {
+    color: #2e7d32;
+    font-size: 24px;
+}
+
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #2e7d32;
+}
+
+/* Button */
+.btn {
+    background: #2e7d32;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color:#2e7d32 ;
+    border: 2px solid #2e7d32;
+    transition:0.5s ;
+}
 /* Header */
 header {
   background: white;
