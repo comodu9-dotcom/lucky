@@ -184,8 +184,8 @@ nav a:hover {
 }
 
 .card img {
-    width: 70px;
-    margin-bottom: 20px;
+    width: 100%;
+    /* margin-bottom: 20px; */
 }
 
 .card h3 {
