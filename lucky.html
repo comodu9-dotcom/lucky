@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agric site</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriGrow</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background: #f5f7f4;
+  }
+
+  header {
+    background: #ffffff;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo img {
+    width: 40px;
+  }
+
+  .logo h2 {
+    color: #2e7d32;
+    font-size: 24px;
+  }
+
+  /* Navigation */
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    color: #2e7d32;
+  }
+
+  /* Button */
+  .btn {
+    background: #2e7d32;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background: #1b5e20;
+  }
+
+  /* Mobile Menu */
+  #menu-toggle {
+    display: none;
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #2e7d32;
+  }
+
+  /* Responsive */
+  @media(max-width: 768px) {
+
+    nav {
+      position: absolute;
+      top: 75px;
+      left: 0;
+      width: 100%;
+      background: white;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+      display: none;
+      border-top: 1px solid #eee;
+    }
+
+    #menu-toggle:checked + .menu-icon + nav {
+      display: flex;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+<header>
+  
+  <div class="logo">
+    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909762.png" alt="logo">
+    <h2>AgriGrow</h2>
+  </div>
+
+  <!-- Checkbox for toggle -->
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Products</a>
+    <a href="#">Contact</a>
+    <a href="#" class="btn">Get Started</a>
+  </nav>
+
+</header>
+
+</body>
+</html>
+
+</body>
+</html>
