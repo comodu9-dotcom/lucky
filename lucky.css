@@ -57,7 +57,8 @@ nav a:hover {
 
 /* Button */
 .btn {
-    background: #047b0a;
+    background: transparent;
+    border: 2px solid white;
     color: white;
     padding: 8px 18px;
     border-radius: 20px;
@@ -89,7 +90,7 @@ nav a:hover {
 /* ---------- ADDITIONAL COMPONENTS ---------- */
 .hero {
     /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
-    background-image:  url('farm field.avif');
+    background-image:  url(farm.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
