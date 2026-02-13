@@ -57,17 +57,20 @@ nav a:hover {
 
 /* Button */
 .btn {
-    background: #2e7d32;
+    background: #047b0a;
     color: white;
     padding: 8px 18px;
     border-radius: 20px;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .btn:hover {
-    background: white;
-    color:#2e7d32 ;
-    border: 2px solid #2e7d32;
+    background: transparent;
+    color:white ;
+    font-size: 24px;
+    font-weight: 700;
+    border: 2px solid white;
     transition:0.5s ;
 }
 
@@ -130,11 +133,12 @@ nav a:hover {
     padding: 10px 28px;
     border-radius: 30px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .btn-outline:hover {
-    background: white;
-    color: #2e7d32;
+    background: transparent;
+    color: white;
     border-color: white;
 }
 
