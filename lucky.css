@@ -65,7 +65,10 @@ nav a:hover {
 }
 
 .btn:hover {
-    background: #1b5e20;
+    background: white;
+    color:#2e7d32 ;
+    border: 2px solid #2e7d32;
+    transition:0.5s ;
 }
 
 /* Mobile Menu */
