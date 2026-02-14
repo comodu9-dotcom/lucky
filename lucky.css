@@ -57,7 +57,7 @@ nav a:hover {
 
 /* Button */
 .btn {
-    background: transparent;
+    background: #2e7d32;
     border: 2px solid white;
     color: white;
     padding: 8px 18px;
@@ -68,10 +68,10 @@ nav a:hover {
 
 .btn:hover {
     background: transparent;
-    color:white ;
-    font-size: 24px;
+    color: #2e7d32;
+    font-size: 15px;
     font-weight: 700;
-    border: 2px solid white;
+    border: 2px solid  #2e7d32;
     transition:0.5s ;
 }
 
