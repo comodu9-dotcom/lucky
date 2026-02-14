@@ -89,17 +89,11 @@ nav a:hover {
 
 /* ---------- ADDITIONAL COMPONENTS ---------- */
 .hero {
-<<<<<<< HEAD
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    background-image:  url('farm field.avif');
-=======
-    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
     background-image:  url(farm.jpg);
->>>>>>> fe749f42aa0dfbc65fa89f2542116116eaf4df42
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
     min-height: 85vh;
     display: flex;
     align-items: center;
@@ -140,12 +134,14 @@ nav a:hover {
     border-radius: 30px;
     font-weight: bold;
     text-decoration: none;
+    transition: all .3s ease;
 }
 
 .btn-outline:hover {
     background: transparent;
     color: white;
-    border-color: white;
+    font-size: 20px;
+    /* border-color: white; */
 }
 
 /* Section styles */
