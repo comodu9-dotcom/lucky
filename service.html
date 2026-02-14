@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriGrow – Our Services</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  }
+
+  body {
+    background: #f8faf7;
+    color: #1f2e24;
+  }
+
+  /* header / navigation (reused from main site, consistent style) */
+  header {
+    background: #ffffff;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 30, 10, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo img {
+    width: 40px;
+    height: auto;
+  }
+
+  .logo h2 {
+    color: #2e7d32;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #2a3f32;
+    font-weight: 500;
+    transition: 0.25s;
+    font-size: 1rem;
+  }
+
+  nav a:hover {
+    color: #2e7d32;
+  }
+
+  .btn {
+    background: #2e7d32;
+    color: white;
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn:hover {
+    background: #1d5e24;
+    transform: scale(1.02);
+  }
+
+  #menu-toggle { display: none; }
+  .menu-icon { display: none; font-size: 28px; cursor: pointer; color: #2e7d32; }
+
+  /* ---------- SERVICE PAGE SPECIFIC ---------- */
+  .page-header {
+    background: linear-gradient(rgba(30, 60, 35, 0.85), rgba(20, 50, 25, 0.9)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    padding: 5rem 8%;
+    text-align: center;
+    color: white;
+  }
+
+  .page-header h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+  }
+
+  .page-header p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.92;
+  }
+
+  .services-intro {
+    text-align: center;
+    padding: 4rem 8% 1rem;
+  }
+
+  .services-intro h2 {
+    font-size: 2.4rem;
+    color: #1d4b2a;
+    margin-bottom: 1.2rem;
+  }
+
+  .services-intro .lead {
+    font-size: 1.2rem;
+    color: #3b5c45;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+
+  /* service grid */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px 30px;
+    padding: 2rem 8% 5rem;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 32px;
+    padding: 2.2rem 1.8rem;
+    box-shadow: 0 15px 30px -8px rgba(0, 40, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2efe2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 40px -12px #2e7d3240;
+    border-color: #b7dbb7;
+  }
+
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    background: #e7f3e7;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+  }
+
+  .service-icon img {
+    width: 45px;
+    height: 45px;
+    filter: brightness(0) saturate(100%) invert(30%) sepia(55%) saturate(520%) hue-rotate(72deg) brightness(96%) contrast(90%);
+  }
+
+  .service-card h3 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #1b4c27;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .service-description {
+    color: #3f5a47;
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+    flex: 1;
+  }
+
+  .service-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .service-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+    color: #2b4a34;
+  }
+
+  .service-features li::before {
+    content: "🌿";
+    font-size: 1.1rem;
+  }
+
+  .card-cta {
+    margin-top: auto;
+    font-weight: 600;
+    color: #2e7d32;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px dashed #cde0cd;
+    padding-top: 1.2rem;
+    transition: 0.2s;
+  }
+
+  .card-cta:hover {
+    color: #17501f;
+    gap: 12px;
+  }
+
+  /* process / how it works */
+  .process-section {
+    background: #e9f2e6;
+    padding: 5rem 8%;
+    text-align: center;
+  }
+
+  .process-section h2 {
+    font-size: 2.5rem;
+    color: #1c4224;
+    margin-bottom: 1rem;
+  }
+
+  .process-section > p {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    color: #3b6044;
+    font-size: 1.2rem;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 60px;
+  }
+
+  .step {
+    flex: 1 1 180px;
+    max-width: 260px;
+  }
+
+  .step-number {
+    background: #2e7d32;
+    color: white;
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 0 #1a4d1e;
+  }
+
+  .step h4 {
+    font-size: 1.5rem;
+    color: #1c4525;
+    margin-bottom: 12px;
+  }
+
+  .step p {
+    color: #3a5b42;
+    line-height: 1.5;
+  }
+
+  /* service CTA banner */
+  .service-cta {
+    background: #1f4027;
+    color: white;
+    padding: 4.5rem 8%;
+    text-align: center;
+  }
+
+  .service-cta h3 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-cta p {
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin: 0 auto 2.2rem;
+    opacity: 0.9;
+  }
+
+  .service-cta .btn {
+    background: white;
+    color: #1f4027;
+    font-size: 1.2rem;
+    padding: 14px 45px;
+    border-radius: 50px;
+    font-weight: 700;
+  }
+
+  .service-cta .btn:hover {
+    background: #e0f0da;
+  }
+
+  /* footer */
+  footer {
+    background: #1b3422;
+    color: #d0ddd5;
+    padding: 50px 8% 20px;
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-col {
+    flex: 1 1 200px;
+  }
+
+  .footer-col h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 12px;
+  }
+
+  .footer-col ul li a {
+    color: #bcd0c0;
+    text-decoration: none;
+  }
+
+  .footer-col ul li a:hover {
+    color: white;
+    padding-left: 5px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .social-links a {
+    background: #2c5237;
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .social-links a:hover {
+    background: #2e7d32;
+  }
+
+  .copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #3c5e48;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      position: absolute;
+      top: 75px;
+      left: 0;
+      width: 100%;
+      background: white;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+      display: none;
+      border-top: 1px solid #d0e0d0;
+      box-shadow: 0 20px 30px rgba(0,20,0,0.1);
+    }
+    #menu-toggle:checked + .menu-icon + nav { display: flex; }
+    .menu-icon { display: block; }
+
+    .page-header h1 { font-size: 2.5rem; }
+    .services-intro h2 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909762.png" alt="AgriGrow leaf logo">
+    <h2>AgriGrow</h2>
+  </div>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+  <nav>
+    <a href="lucky.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html" style="color:#2e7d32; font-weight:600;">Services</a>   <!-- active -->
+    <a href="product.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="#" class="btn">Get Started</a>
+  </nav>
+</header>
+
+<!-- PAGE HEADER (services hero) -->
+<div class="page-header">
+  <h1>Our Services</h1>
+  <p>Science‑backed, farmer‑trusted — from soil to market, we help you thrive sustainably.</p>
+</div>
+
+<!-- intro -->
+<div class="services-intro">
+  <h2>Comprehensive agricultural support</h2>
+  <div class="lead">Whether you manage 2 acres or 200, our tailored services increase yield, restore soil, and cut costs.</div>
+</div>
+
+<!-- SERVICE GRID – detailed cards with icon, feature list, and link -->
+<div class="service-grid">
+  
+  <!-- 1. Soil health & analysis -->
+  <div class="service-card">
+    <div class="service-icon">
+      <img src="https://cdn-icons-png.flaticon.com/512/3037/3037367.png" alt="soil icon">
+    </div>
+    <h3>Soil Health Lab</h3>
+    <div class="service-description">
+      In-depth physical, chemical, and biological analysis. Get precise recommendations for amendments, cover crops, and pH balance.
+    </div>
+    <ul class="service-features">
+      <li>NPK + micronutrient profiling</li>
+      <li>Organic matter & carbon content</li>
+      <li>Custom fertilization plans</li>
+    </ul>
+    <a href="#" class="card-cta">Learn more →</a>
+  </div>
+
+  <!-- 2. Smart irrigation -->
+  <div class="service-card">
+    <div class="service-icon">
+      <img src="https://cdn-icons-png.flaticon.com/512/3095/3095123.png" alt="irrigation icon">
+    </div>
+    <h3>Smart Irrigation</h3>
+    <div class="service-description">
+      Design and installation of drip, sprinkler, and sensor‑based systems. We help you reduce water usage by up to 40%.
+    </div>
+    <ul class="service-features">
+      <li>Moisture sensor integration</li>
+      <li>Solar‑pump solutions</li>
+      <li>Automated scheduling</li>
+    </ul>
+    <a href="#" class="card-cta">Learn more →</a>
+  </div>
+
+  <!-- 3. Premium seeds & biotech -->
+  <div class="service-card">
+    <div class="service-icon">
+      <img src="https://cdn-icons-png.flaticon.com/512/3037/3037910.png" alt="seed icon">
+    </div>
+    <h3>Elite Seeds</h3>
+    <div class="service-description">
+      High‑germination, disease‑resistant varieties adapted to your microclimate. Non‑GMO and hybrid options available.
+    </div>
+    <ul class="service-features">
+      <li>Regional variety matching</li>
+      <li>Drought‑tolerant strains</li>
+      <li>Certified organic lines</li>
+    </ul>
+    <a href="#" class="card-cta">Learn more →</a>
+  </div>
+
+  <!-- 4. Pest & disease management -->
+  <div class="service-card">
+    <div class="service-icon">
+      <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" alt="pest management icon">
+    </div>
+    <h3>Eco‑Protection</h3>
+    <div class="service-description">
+      Integrated pest management (IPM) using beneficial insects, traps, and organic treatments — minimal chemicals.
+    </div>
+    <ul class="service-features">
+      <li>Field scouting & monitoring</li>
+      <li>Biocontrol agents</li>
+      <li>Fungus & bacteria prevention</li>
+    </ul>
+    <a href="#" class="card-cta">Learn more →</a>
+  </div>
+
+  <!-- 5. Farm training & workshops -->
+  <div class="service-card">
+    <div class="service-icon">
+      <img src="https://cdn-icons-png.flaticon.com/512/4271/4271815.png" alt="training icon">
+    </div>
+    <h3>Farmer Training</h3>
+    <div class="service-description">
+      Hands‑on workshops, digital courses, and demo days. Topics: regenerative ag, composting, financial planning.
+    </div>
+    <ul class="service-features">
+      <li>Regenerative practices</li>
+      <li>Post‑harvest handling</li>
+      <li>Business & marketing</li>
+    </ul>
+    <a href="#" class="card-cta">Learn more →</a>
+  </div>
+
+  <!-- 6. Market linkages -->
+  <div class="service-card">
+    <div class="service-icon">
+      <img src="https://cdn-icons-png.flaticon.com/512/3082/3082284.png" alt="market icon">
+    </div>
+    <h3>Market Access</h3>
+    <div class="service-description">
+      Connect directly with buyers, cooperatives, and retailers. We help you get fair prices and reduce post‑harvest loss.
+    </div>
+    <ul class="service-features">
+      <li>Collective selling groups</li>
+      <li>Quality certification support</li>
+      <li>Digital marketplace</li>
+    </ul>
+    <a href="#" class="card-cta">Learn more →</a>
+  </div>
+</div>
+
+<!-- HOW IT WORKS / PROCESS SECTION -->
+<div class="process-section">
+  <h2>How our service works</h2>
+  <p>From first contact to harvest — a seamless partnership.</p>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h4>Consultation</h4>
+      <p>We visit your farm, listen to your goals, and assess current practices.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <h4>Custom plan</h4>
+      <p>Tailored roadmap with specific services, timeline, and expected outcomes.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <h4>Implementation</h4>
+      <p>Our experts work alongside you — training, installing, and monitoring.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">4</div>
+      <h4>Ongoing support</h4>
+      <p>Continuous advice, soil re‑testing, and access to new tools.</p>
+    </div>
+  </div>
+</div>
+
+<!-- STRONG CALL TO ACTION (service oriented) -->
+<div class="service-cta">
+  <h3>Ready to boost your yield?</h3>
+  <p>Talk to our service team. We'll create a proposal tailored to your land and crops — no obligation.</p>
+  <a href="#" class="btn">Request a consultation</a>
+</div>
+
+<!-- FOOTER (same as homepage, keeps brand consistency) -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>AgriGrow</h4>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Our team</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Sustainability</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Soil analysis</a></li>
+        <li><a href="#">Irrigation</a></li>
+        <li><a href="#">Seed supply</a></li>
+        <li><a href="#">Pest management</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Guides</a></li>
+        <li><a href="#">Research</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Partners</a></li>
+      </ul>
+      <div class="social-links">
+        <a href="#">f</a>
+        <a href="#">t</a>
+        <a href="#">in</a>
+        <a href="#">ig</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>&copy; 2025 AgriGrow. All rights reserved. — Cultivating a greener tomorrow.</p>
+  </div>
+</footer>
+</body>
+</html>

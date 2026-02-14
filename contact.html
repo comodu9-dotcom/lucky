@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cont">
+    <title>contact</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    color: #333;
+}
+
+* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 40px;
+}
+
+.logo h2 {
+    color: #2e7d32;
+    font-size: 24px;
+}
+
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #2e7d32;
+}
+
+/* Button */
+.btn {
+    background: #2e7d32;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color:#2e7d32 ;
+    border: 2px solid #2e7d32;
+    transition:0.5s ;
+}
+header {
+  background: white;
+  padding: 15px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.logo h2 {
+  color: #2e7d32;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.contact-wrapper {
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 40px;
+    background: #4e73df;
+    color: white;
+}
+
+.contact-info h2 {
+    margin-bottom: 20px;
+}
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info i {
+    margin-right: 10px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: white;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: #1cc88a;
+}
+
+.contact-form {
+    flex: 1;
+    padding: 40px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 120px;
+}
+.contact-form button {
+    background: #4e73df;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #1cc88a;
+}
+
+@media(max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909762.png" alt="logo">
+            <h2>AgriGrow</h2>
+        </div>
+        <nav>
+            <a href="lucky.html">Homes</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="product.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="images.html">image gallery</a>
+            <a href="#" class="btn">Get Started</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="contact-wrapper">
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>We'd love to hear from you! Reach out through any of the channels below.</p>
+
+                <p><i class="fas fa-envelope"></i> support@yourcompany.com</p>
+                <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                <p><i class="fab fa-whatsapp"></i> +1 (123) 456-7890</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Business Street, New York, USA</p>
+
+                <div class="social-icons">
+                    <a href="https://facebook.com/YourCompany" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/YourCompany" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/YourCompany" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/YourCompany" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/11234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number">
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message 🚀</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
